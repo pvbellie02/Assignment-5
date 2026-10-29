@@ -8,9 +8,6 @@ cast loaded by a second request. Clicking a show opens its detail page
 channel. This is a rebuild of my vanilla JavaScript TVmaze gallery.
 
 ## How to run
-
-You need Node.js 20.19 or newer (or 22.12 or newer).
-
 ```
 npm install
 npm run dev
