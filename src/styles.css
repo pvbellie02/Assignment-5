@@ -1,0 +1,275 @@
+/*
+  Name: [Pranav Bellie]
+  Date: 10.29.2026
+  CSC 372-01
+
+  This is the stylesheet for the TVmaze React gallery. It styles the
+  shared header and footer, the search form, the flexbox gallery of
+  show cards, and the show detail page. It is imported once, in
+  src/main.jsx.
+*/
+
+/* generic element selectors */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f4f5f9;
+  color: #222222;
+  line-height: 1.5;
+}
+
+h1 {
+  margin: 0 0 6px 0;
+  font-size: 26pt;
+}
+
+h2 {
+  margin: 0 0 8px 0;
+  font-size: 15pt;
+}
+
+h3 {
+  margin: 12px 0 4px 0;
+  font-size: 11pt;
+}
+
+p {
+  margin: 0 0 8px 0;
+}
+
+ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+a {
+  color: #1a4fb3;
+}
+
+a:focus-visible,
+input:focus-visible,
+button:focus-visible {
+  outline: 3px solid #c2185b;
+  outline-offset: 2px;
+}
+
+/* context selectors */
+header {
+  background-color: #1f2540;
+  padding: 16px 20px;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px;
+}
+
+form label {
+  font-weight: bold;
+}
+
+footer {
+  background-color: #1f2540;
+  color: #d9dcf0;
+  padding: 16px 20px;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer a {
+  color: #ffffff;
+}
+
+.show-facts p {
+  margin-bottom: 4px;
+  font-size: 10.5pt;
+}
+
+/* classes */
+.message {
+  margin: 16px 0;
+  font-weight: bold;
+  text-align: center;
+}
+
+.message-error {
+  color: #a1123d;
+}
+
+.show-card {
+  flex: 1 1 320px;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 1px solid #d5d8e8;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.poster,
+.poster-placeholder {
+  width: 100%;
+  height: 340px;
+}
+
+.poster {
+  display: block;
+  object-fit: cover;
+  object-position: top;
+}
+
+.poster-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e3e5f0;
+  color: #555a78;
+  font-style: italic;
+}
+
+.show-card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 16px;
+}
+
+.show-summary {
+  margin: 8px 0 12px 0;
+}
+
+.cast-list {
+  font-size: 10.5pt;
+}
+
+.tvmaze-link {
+  display: inline-block;
+  align-self: flex-start;
+  margin-top: auto;
+  padding-top: 12px;
+  font-weight: bold;
+}
+
+/* ids (each appears once per page) */
+#site-title {
+  color: #ffffff;
+  font-size: 16pt;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#page-intro {
+  margin-bottom: 20px;
+}
+
+#search-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+#search-input {
+  flex: 1 1 260px;
+  max-width: 420px;
+  padding: 10px 12px;
+  font-size: 12pt;
+  border: 2px solid #8a90b4;
+  border-radius: 4px;
+}
+
+#search-button {
+  padding: 10px 22px;
+  font-size: 12pt;
+  font-weight: bold;
+  background-color: #c2185b;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#search-button:hover {
+  background-color: #9c1349;
+}
+
+#search-button:disabled {
+  background-color: #6b6f8a;
+  cursor: not-allowed;
+}
+
+#results-summary {
+  min-height: 1.5em;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+#show-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+#back-link {
+  display: inline-block;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+#show-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: flex-start;
+  background-color: #ffffff;
+  border: 1px solid #d5d8e8;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+#show-detail-body {
+  flex: 1 1 320px;
+}
+
+#show-detail .poster,
+#show-detail .poster-placeholder {
+  width: 300px;
+  max-width: 100%;
+  height: 420px;
+}
+
+/* media queries - responsive behavior */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 20pt;
+  }
+
+  #search-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #search-input {
+    flex: none;
+    max-width: none;
+  }
+
+  .show-card {
+    max-width: none;
+  }
+
+  #show-detail {
+    padding: 14px;
+  }
+}
